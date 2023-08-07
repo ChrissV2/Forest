@@ -1,0 +1,953 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.wrapper-extended {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1920px;
+}
+
+.wrapper-nav {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1920px;
+	position: sticky;
+	top: 0;
+	z-index: 50;
+}
+
+.nav {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 10vh;
+	background-color: white;
+	white-space: nowrap;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		margin-left: 12em;
+		padding: 1em 0;
+		width: 60%;
+
+		&-anchor {
+			text-decoration: none;
+
+			&-icon {
+				width: 43px;
+			}
+
+			&-text {
+				position: relative;
+				top: -3px;
+				font-size: 4rem;
+				color: black;
+				z-index: 0;
+			}
+		}
+
+		&--hidden {
+			display: none;
+		}
+	}
+
+	&__items {
+		display: flex;
+		align-items: center;
+		margin-right: 12em;
+		width: 40%;
+		height: 100%;
+		font-size: 2rem;
+
+		&-item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 30%;
+			padding: 1em;
+			text-decoration: none;
+			color: black;
+			transition: color 0.3s, background-color 0.3s;
+			outline: none;
+
+			&:hover,
+			&:focus {
+				background-color: black;
+				color: white;
+			}
+
+			&--active {
+				background-color: black;
+				color: white;
+			}
+		}
+	}
+}
+
+.nav-mobile {
+	position: fixed;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	transform: translateX(100%);
+	background-color: white;
+	transition: transform 0.5s cubic-bezier(0.73, -0.02, 0.345, 1);
+	z-index: 100;
+	overflow: hidden;
+
+	&__items {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		font-size: 4rem;
+
+		&-item {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 30%;
+			padding: 1em;
+			text-decoration: none;
+			color: black;
+			outline: none;
+			transition: transform 0.3s;
+			-webkit-tap-highlight-color: transparent;
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 30px;
+				left: 0;
+				height: 3px;
+				width: 100%;
+				background-color: black;
+				transform: scaleX(0);
+				transform-origin: right;
+				transition: transform 0.3s;
+			}
+
+			&:hover::after,
+			&:focus::after {
+				transform: scaleX(1);
+				transform-origin: left;
+			}
+
+			&:hover,
+			&:focus {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	&--active {
+		transform: translateX(0);
+	}
+}
+
+.hamburger {
+	display: none;
+	margin-top: 4px;
+	z-index: 101;
+}
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0 auto;
+	width: 100%;
+	height: 60vh;
+	max-width: 1920px;
+	background-image: url('../img/jungle.jpg');
+	background-size: cover;
+	background-position: center;
+
+	&__text {
+		position: relative;
+		left: 15%;
+		z-index: 1;
+		color: white;
+
+		&-subtitle {
+			font-weight: 400;
+			font-size: 2.5rem;
+		}
+
+		&-maintitle {
+			font-weight: 700;
+			font-size: 4.3rem;
+		}
+	}
+
+	&__shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+}
+
+.aboutUs {
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 5em;
+	height: 50vh;
+	margin: 4em 0;
+
+	&__title {
+		grid-column: 1/-1;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 4rem;
+	}
+
+	&__img {
+		grid-column: 1/2;
+		width: 100%;
+		height: 100%;
+		background-image: url('../img/lake.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		grid-column: 2/3;
+
+		&-title {
+			font-size: 3rem;
+			margin-bottom: 0.5em;
+		}
+
+		&-paragraph {
+			font-size: 1.7rem;
+			line-height: 1.8em;
+		}
+	}
+}
+
+.adventure {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	width: 100%;
+	height: 40vh;
+	max-width: 1920px;
+	background-image: url('../img/kid.jpg');
+	background-size: cover;
+	background-position: center;
+
+	&__title {
+		padding: 1em 4.5em;
+		z-index: 1;
+		font-size: 4rem;
+		color: white;
+		border: 1px solid white;
+	}
+
+	&__shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+}
+
+.offers {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 6em 0;
+
+	&__title {
+		text-align: center;
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 4rem;
+	}
+
+	&__subtitle {
+		font-size: 2rem;
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+		margin-top: 3em;
+
+		&-card {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			height: 447px;
+			width: 337px;
+			border-radius: 8px;
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+			transition: transform 0.3s;
+			outline: none;
+
+			&-title {
+				justify-content: flex-start;
+				margin-top: 0.5em;
+				margin-bottom: 0.3em;
+				font-weight: 400;
+				font-size: 3.6rem;
+			}
+
+			&-price {
+				margin-bottom: 1em;
+				font-size: 3.5rem;
+				font-weight: 700;
+			}
+
+			&-options {
+				margin-bottom: 1.8em;
+				list-style: none;
+				font-weight: 400;
+				font-size: 1.9rem;
+
+				&-negative {
+					color: rgb(120, 120, 120);
+				}
+
+				&-negative,
+				&-positive {
+					margin-bottom: 0.3em;
+				}
+
+				&-negative:last-child,
+				&-positive:last-child {
+					margin-bottom: 0em;
+				}
+
+				img {
+					position: relative;
+					top: 0.3em;
+					margin-right: 0.3em;
+					width: 1.2em;
+				}
+			}
+
+			&:hover, &:focus {
+				transform: scale(1.08);
+			}
+
+			&-btn {
+				position: relative;
+				padding: 0.5em 4em;
+				margin-bottom: 1.5em;
+				z-index: 1;
+				font-size: 1.8rem;
+				border: none;
+				border-radius: 8px;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+				background-color: white;
+				overflow: hidden;
+				transition: color 0.5s;
+				outline: none;
+				cursor: pointer;
+
+				&--highlited {
+					border: 2px solid rgb(42, 222, 114);
+					color: white;
+					background-color: rgb(42, 222, 114);
+
+					&::before,
+					&::after {
+						background-color: white !important;
+					}
+
+					&:hover,
+					&:focus {
+						color: rgb(42, 222, 114) !important;
+					}
+				}
+
+				&:hover, &:focus{
+					color: white;
+				}
+
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 100%;
+					height: 100%;
+					z-index: -1;
+					transition: 0.8s;
+					background-color: rgb(42, 222, 114);
+				}
+
+				&::before {
+					top: -49%;
+					left: -100%;
+				}
+
+				&::after {
+					bottom: -49%;
+					right: -100%;
+				}
+
+				&:hover::after,
+				&:focus::after {
+					right: 0;
+				}
+
+				&:hover::before,
+				&:focus::before {
+					left: 0;
+				}
+			}
+		}
+	}
+
+	&__moreOffers {
+		margin-top: 4em;
+		font-size: 2rem;
+	}
+
+	&__moreOffersLink {
+		position: relative;
+		margin-top: 0.5em;
+		z-index: 4;
+		color: black;
+		text-decoration: none;
+		font-size: 2rem;
+		font-weight: bold;
+		border-bottom: 2px solid rgb(42, 222, 114);
+		outline: none;
+
+		&:hover,
+		&:focus {
+			color: white;
+		}
+
+		&,
+		&::before,
+		&::after {
+			transition: 0.3s;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			transform: translateX(5%);
+			width: 110%;
+			height: 0;
+			background-color: rgb(42, 222, 114);
+			z-index: -1;
+		}
+
+		&:hover::after,
+		&:focus::after {
+			height: 110%;
+		}
+	}
+}
+
+.footer {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	height: 40vh;
+	background-color: rgb(245, 245, 245);
+
+	&__logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		grid-column: 1/3;
+		grid-row: 1/5;
+
+		&-anchor {
+			text-decoration: none;
+			color: black;
+
+			&-text {
+				font-size: 6rem;
+			}
+
+			&-icon {
+				position: relative;
+				top: 3px;
+				width: 65px;
+			}
+		}
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		grid-column: 3/6;
+		grid-row: 1/4;
+
+		&-card {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-direction: column;
+			height: 50px;
+
+			&-title {
+				margin-bottom: 0.7em;
+				font-size: 2.3rem;
+			}
+
+			&-paragraph {
+				margin-bottom: 0.7em;
+				color: black;
+				text-decoration: none;
+				transition: color 0.3s;
+
+				&:hover {
+					color: rgb(42, 222, 114);
+				}
+			}
+		}
+	}
+
+	&__credits {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		grid-column: 1/-1;
+		grid-row: 5/6;
+		border-top: 1px solid gray;
+	}
+}
+
+@media (max-width: 1440px) {
+	.nav {
+		&__logo {
+			margin-left: 5em;
+		}
+
+		&__items {
+			margin-right: 5em;
+		}
+	}
+}
+
+@media (max-width: 1257px) {
+	.nav {
+		&__logo {
+			width: 40%;
+			margin-left: 2em;
+		}
+
+		&__items {
+			margin-right: 2em;
+		}
+	}
+
+	.header {
+		justify-content: center;
+		&__text {
+			left: 0;
+		}
+	}
+
+	.aboutUs {
+		column-gap: 2em;
+		margin: 4em 2em;
+	}
+}
+
+@media (max-width: 1150px) {
+	.offers {
+		&__cards {
+			&-card {
+				width: 290px;
+			}
+		}
+	}
+}
+
+@media (max-width: 982px) {
+	.nav {
+		&__logo {
+			margin-left: 2em;
+		}
+
+		&__items {
+			width: 60%;
+			margin-right: 2em;
+		}
+	}
+
+	.header {
+		background-image: url('../img/jungle-small.jpg');
+		&__text {
+			padding: 0.5em;
+			text-align: center;
+		}
+	}
+
+	.aboutUs {
+		grid-template-rows: 1fr 6fr 3fr;
+		grid-template-columns: 1fr 1fr;
+		height: 80vh;
+		margin: 2em 4em;
+		column-gap: 0;
+		row-gap: 2em;
+
+		&__title {
+			grid-column: 1/-1;
+			grid-row: 1/2;
+		}
+
+		&__img {
+			grid-column: 1/-1;
+			grid-row: 2/3;
+			background-image: url('../img/lake-small.jpg');
+		}
+
+		&__text {
+			grid-column: 1/-1;
+			grid-row: 3/4;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	.adventure {
+		height: 40vh;
+		background-image: url('../img/kid-small.jpg');
+
+		&__title {
+			padding: 1em 4.5em;
+			font-size: 3rem;
+		}
+	}
+
+	.offers {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin: 2em 0;
+
+		&__cards {
+			align-items: center;
+			flex-wrap: wrap;
+
+			&-card {
+				margin: 1em 1em 2em 1em;
+			}
+		}
+	}
+
+	.footer {
+		&__cards {
+			&-card {
+				&-title {
+					margin-bottom: 0.7em;
+					font-size: 2.1rem;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.nav {
+		&__logo {
+			margin-left: 0.5em;
+		}
+
+		&__items {
+			display: none;
+		}
+	}
+
+	.nav-mobile {
+		display: flex;
+	}
+
+	.hamburger {
+		display: block;
+	}
+
+	.adventure {
+		height: 30vh;
+		&__title {
+			padding: 1em 4.5em;
+			font-size: 2.3rem;
+		}
+	}
+
+	.offers {
+		&__cards {
+			&-card {
+				flex-basis: 400px;
+			}
+		}
+
+		&__moreOffers {
+			margin-top: 2em;
+			font-size: 1.7rem;
+		}
+	
+		&__moreOffersLink {
+			font-size: 1.7rem;
+		}
+	}
+
+	.footer {
+		&__logo {
+			display: none;
+		}
+
+		&__cards {
+			grid-column: 1/-1;
+			grid-row: 1/4;
+
+			&-card {
+				&-title {
+					margin-bottom: 0.7em;
+					font-size: 2rem;
+				}
+
+				&-paragraph {
+					margin-bottom: 0.7em;
+					font-size: 1.7rem;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.header {
+		&__text-maintitle {
+			font-size: 3.7rem;
+		}
+
+		&__text-subtitle {
+			font-size: 2.2rem;
+		}
+	}
+
+	.aboutUs {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin: 4em 2em;
+		height: auto;
+
+		&__title {
+			font-size: 3.5rem;
+		}
+
+		&__text-title {
+			text-align: center;
+			font-size: 2.5rem;
+		}
+
+		&__img {
+			min-height: 250px;
+			min-width: 300px;
+			background-image: url('../img/lake-small.jpg');
+		}
+	}
+
+	.adventure {
+		&__title {
+			padding: 0.8em 1.8em;
+			font-size: 2rem;
+		}
+	}
+
+	.offers {
+		margin: 2em 1em;
+
+		&__cards {
+			align-items: center;
+			flex-wrap: wrap;
+
+			&-card {
+				width: 300px;
+				margin-bottom: 2em;
+				flex-basis: auto;
+
+				&-title {
+					font-size: 3.3rem;
+				}
+
+				&-price {
+					font-size: 3.2rem;
+				}
+
+				&-options {
+					font-size: 1.7rem;
+				}
+			}
+		}
+
+		&__title {
+			font-size: 3.5rem;
+		}
+
+		&__subtitle {
+			text-align: center;
+			font-size: 1.8rem;
+		}
+
+		&__moreOffers {
+			display: none;
+		}
+	
+		&__moreOffersLink {
+			font-size: 2rem;
+		}
+	}
+
+	.footer {
+		grid-template-rows: 3fr 4fr 1fr 1fr 2fr;
+		height: 550px;
+
+		&__credits {
+			font-size: 1.5rem;
+		}
+
+		&__cards {
+			display: grid;
+			row-gap: 50px;
+
+			&-card {
+				&-title {
+					font-size: 2rem;
+				}
+				&-paragraph {
+					font-size: 1.7rem;
+				}
+
+				&--first {
+					grid-row: 1/2;
+				}
+
+				&--second {
+					grid-row: 2/3;
+				}
+
+				&--third {
+					grid-row: 3/4;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.header {
+		&__text-maintitle {
+			font-size: 3rem;
+		}
+
+		&__text-subtitle {
+			font-size: 2rem;
+		}
+	}
+
+	.aboutUs {
+		&__img {
+			min-height: 200px;
+			min-width: 250px;
+		}
+	}
+
+	.adventure {
+		&__title {
+			padding: 2em 1.8em;
+			font-size: 1.5rem;
+		}
+	}
+
+	.offers {
+		&__title {
+			font-size: 3rem;
+		}
+
+		&__subtitle {
+			font-size: 1.7rem;
+		}
+
+		&__cards {
+			align-items: center;
+			flex-wrap: wrap;
+
+			&-card {
+				width: 260px;
+				margin-bottom: 2em;
+				flex-basis: auto;
+
+				&-title {
+					font-size: 3.3rem;
+				}
+
+				&-price {
+					font-size: 3.2rem;
+				}
+
+				&-options {
+					font-size: 1.7rem;
+				}
+			}
+		}
+
+		&__moreOffersLink {
+			font-size: 1.9rem;
+		}
+	}
+}

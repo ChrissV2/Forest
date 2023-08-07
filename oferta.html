@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zobacz jakie usługi mamy w ofercie i wybierz jedną dla siebie!">
+    <title>Forest | Oferty</title>
+    <link rel="icon" href="dist/img/icons/tree-svgrepo-com-white.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <link href="./dist/css/hamburger.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/style.min.css">
+    <link rel="stylesheet" href="./dist/css/offers.min.css">
+</head>
+
+<body>
+
+    <div class="wrapper-nav">
+
+
+        <nav class="nav nav-mobile">
+
+            <div class="nav-mobile__items">
+                <a href="./index.html" onclick="delayLinks(event, './index.html')" class="nav-mobile__items-item">Home</a>
+                <a href="./index.html#aboutus" onclick="delayLinks(event, './index.html#aboutus')" class="nav-mobile__items-item">O nas</a>
+                <a href="./index.html#offers" onclick="delayLinks(event, './index.html#offers')" class="nav-mobile__items-item">Oferta</a>
+                <a href="./kontakt.html" onclick="delayLinks(event, './kontakt.html')" class="nav-mobile__items-item">Kontakt</a>
+            </div>
+
+        </nav>
+
+        <nav class="nav nav-desktop">
+
+            <div class="nav__logo">
+                <a href="./index.html" class="nav__logo-anchor">
+                    <img class="nav__logo-anchor-icon" src="./dist/img/icons/tree-svgrepo-com.svg"
+                        alt="Logo firmy w krzstałcie choinki">
+                    <span class="nav__logo-anchor-text">Forest</span>
+                </a>
+            </div>
+
+            <div class="nav__items nav__items--desktop">
+                <a href="./index.html" class="nav__items-item nav__items-item--first">Home</a>
+                <a href="./index.html#aboutus" class="nav__items-item nav__items-item--second">O nas</a>
+                <a href="./index.html#offers" class="nav__items-item nav__items-item--third">Oferta</a>
+                <a href="./kontakt.html" class="nav__items-item nav__items-item--fourth">Kontakt</a>
+            </div>
+
+            <button class="hamburger hamburger--collapse" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </nav>
+
+    </div>
+
+    <main>
+
+        <div class="wrapper-extended">
+
+            <section class="offersHeader">
+                <div class="offersHeader__shadow"></div>
+                <h1 class="offersHeader__title">Pozostałe oferty</h1>
+            </section>
+
+        </div>
+
+
+        <div class="wrapper">
+
+            <section class="offersList">
+
+                <div class="offersList__card" tabindex="0">
+                    <img alt="" class="offersList__card-img offersList__card-img--first">
+                    <h2 class="offersList__card-title">Dla Firm</h2>
+                    <span class="offersList__card-price">$2000</span>
+                    <ul class="offersList__card-options">
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                    </ul>
+                    <button class="offersList__card-btn">Wybierz</button>
+                </div>
+
+                <div class="offersList__card" tabindex="0">
+                    <img alt="" class="offersList__card-img offersList__card-img--second">
+                    <h2 class="offersList__card-title">Dla Szkół</h2>
+                    <span class="offersList__card-price">$999</span>
+                    <ul class="offersList__card-options">
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                        <li class="offersList__card-options-negative"><img src="./dist/img/icons/minus.svg"
+                                alt="Szara ikonka minusa">Opcja poza pakietem</li>
+                        <li class="offersList__card-options-negative"><img src="./dist/img/icons/minus.svg"
+                                alt="Szara ikonka minusa">Opcja poza pakietem</li>
+                        <li class="offersList__card-options-negative"><img src="./dist/img/icons/minus.svg"
+                                alt="Szara ikonka minusa">Opcja poza pakietem</li>
+                    </ul>
+                    <button class="offersList__card-btn">Wybierz</button>
+                </div>
+
+                <div class="offersList__card" tabindex="0">
+                    <img alt="" class="offersList__card-img offersList__card-img--third">
+                    <h2 class="offersList__card-title">Dla Grup</h2>
+                    <span class="offersList__card-price">$1499</span>
+                    <ul class="offersList__card-options">
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                        <li class="offersList__card-options-positive"><img src="./dist/img/icons/check.svg"
+                                alt="Zielona ikonka zaznaczenia">Opcja w pakiecie</li>
+                        <li class="offersList__card-options-negative"><img src="./dist/img/icons/minus.svg"
+                                alt="Szara ikonka minusa">Opcja poza pakietem</li>
+                    </ul>
+                    <button class="offersList__card-btn">Wybierz</button>
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+    </main>
+
+
+    <div class="wrapper-footer">
+
+        <footer class="footer" id="contact">
+            <div class="footer__logo">
+                <a href="#" class="footer__logo-anchor">
+                    <img class="footer__logo-anchor-icon" src="./dist/img/icons/tree-svgrepo-com.svg"
+                        alt="Logo firmy w krzstałcie choinki">
+                    <span class="footer__logo-anchor-text">Forest</span>
+                </a>
+            </div>
+
+            <div class="footer__cards">
+
+                <div class="footer__cards-card footer__cards-card--first">
+
+                    <h3 class="footer__cards-card-title">O nas</h3>
+                    <a href="#" class="footer__cards-card-paragraph">Historia</a>
+                    <a href="#" class="footer__cards-card-paragraph">Parki</a>
+                    <a href="#" class="footer__cards-card-paragraph">Opinie</a>
+
+                </div>
+
+                <div class="footer__cards-card footer__cards-card--second">
+
+                    <h3 class="footer__cards-card-title">Nasza Firma</h3>
+                    <a href="#" class="footer__cards-card-paragraph">Praca</a>
+                    <a href="#" class="footer__cards-card-paragraph">Kadry</a>
+                    <a href="#" class="footer__cards-card-paragraph">Zarząd</a>
+
+                </div>
+
+
+                <div class="footer__cards-card footer__cards-card--third">
+
+                    <h3 class="footer__cards-card-title">Dokumenty</h3>
+                    <a href="#" class="footer__cards-card-paragraph">Wnioski</a>
+                    <a href="#" class="footer__cards-card-paragraph">Rezerwacje</a>
+
+                </div>
+
+
+            </div>
+
+
+            <span class="footer__credits">&copy; <span class="footer__credits-date">2023</span>Forest Group Company
+                Ltd.</span>
+
+
+        </footer>
+
+    </div>
+
+
+
+
+
+    <script src="./dist/js/script.min.js"></script>
+</body>
+
+</html>

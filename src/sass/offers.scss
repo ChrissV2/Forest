@@ -1,0 +1,220 @@
+.offersHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 50vh;
+	background-image: url('../img/bridge.jpg');
+	background-size: cover;
+	background-position: center;
+
+	&__shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: 0;
+	}
+
+	&__title {
+		font-size: 6rem;
+		color: white;
+		z-index: 2;
+	}
+}
+
+.offersList {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 4em 0;
+
+	&__card {
+		position: relative;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-direction: column;
+		height: 500px;
+		width: 337px;
+		margin: 1em 1em 2em 1em;
+		border-radius: 16px;
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+		transition: transform 0.3s;
+		overflow: hidden;
+		outline: none;
+
+		&-img {
+			position: relative;
+			position: absolute;
+			bottom: 346px;
+			height: 150px;
+			width: 330px;
+			border-radius: 16px;
+			background-size: cover;
+
+			&--first {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/company.jpg');
+				background-position: center;
+			}
+			&--second {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/school.jpg');
+				background-position: center;
+			}
+			&--third {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/team.jpg');
+				background-position: center;
+			}
+		}
+
+		&-title {
+			position: relative;
+			top: 20px;
+			font-size: 3rem;
+			z-index: 10;
+			color: white;
+		}
+
+		&-price {
+			position: relative;
+			top: 65px;
+			margin-bottom: 1em;
+			font-size: 2.5rem;
+			font-weight: bold;
+		}
+
+		&-options {
+			margin-top: 1em;
+			list-style: none;
+			font-size: 1.8rem;
+
+			img {
+				position: relative;
+				top: 0.3em;
+				margin-right: 0.3em;
+				width: 1.2em;
+			}
+
+			&-negative,
+			&-positive {
+				margin-bottom: 0.3em;
+			}
+
+			&-negative:last-child,
+			&-positive:last-child {
+				margin-bottom: 0em;
+			}
+
+			&-negative {
+				color: rgb(120, 120, 120);
+			}
+		}
+
+		&-btn {
+			position: relative;
+			padding: 0.5em 4em;
+			font-size: 1.8rem;
+			border: none;
+			border-radius: 8px;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+			background-color: white;
+			transition: color 0.5s;
+			cursor: pointer;
+			overflow: hidden;
+			z-index: 1;
+			outline: none;
+
+			&:hover, &:focus {
+				color: white;
+			}
+
+			&::before,
+			&::after {
+				position: absolute;
+				display: block;
+				content: '';
+				transition: 0.8s;
+				z-index: -1;
+				width: 100%;
+				height: 100%;
+				background-color: rgb(42, 222, 114);
+			}
+
+			&::before {
+				top: -49%;
+				left: -100%;
+			}
+
+			&::after {
+				bottom: -49%;
+				right: -100%;
+			}
+
+			&:hover::after,
+			&:focus::after {
+				right: 0;
+			}
+
+			&:hover::before,
+			&:focus::before {
+				left: 0;
+			}
+		}
+
+		&:hover, &:focus {
+			transform: scale(1.08);
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.offersHeader {
+		&__title {
+			font-size: 5rem;
+		}
+	}
+}
+
+@media (max-width: 454px) {
+	.offersHeader {
+		&__title {
+			font-size: 4rem;
+		}
+	}
+
+	.offersList {
+		&__card {
+			height: 500px;
+			width: 300px;	
+		}
+	}
+}
+
+@media (max-width: 364px) {
+	.offersHeader {
+		&__title {
+			font-size: 3rem;
+		}
+	}
+
+	.offersList {
+		&__card {
+			&-title {
+				font-size: 2.5rem;
+			}
+
+			&-price {
+				margin-bottom: 1em;
+				font-size: 2.3rem;
+			}
+
+			&-options {
+				margin-top: 1em;
+				font-size: 1.7rem;
+			}
+		}
+	}
+}
