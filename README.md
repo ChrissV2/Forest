@@ -6,7 +6,7 @@ This is my very first project created from scratch. I've had a mockup from the c
 
 ## Live preview 
 
-You can check my page [HERE](https://chrissv2.github.io/Forest/)
+You can check my page [HERE]([https://chrissv2.github.io/Forest/](https://chrissv2.github.io/Forest-Group/))
 
 
 ## Technologies
