@@ -172,10 +172,12 @@
 
 @media (max-width: 576px) {
 	.offersHeader {
+		margin-top: 3.5em;
 		&__title {
 			font-size: 5rem;
 		}
 	}
+
 }
 
 @media (max-width: 454px) {
